@@ -18,6 +18,8 @@ Sentry.init({
     }),
     Sentry.feedbackIntegration({
       colorScheme: "system",
+      triggerLabel: "", // Remove text
+      triggerAriaLabel: "Report Bug",
     }),
   ],
   // Performance Monitoring
