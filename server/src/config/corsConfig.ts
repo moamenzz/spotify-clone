@@ -1,6 +1,9 @@
 import { CorsOptions } from "cors";
 
-const whitelist: string[] = ["http://localhost:5173"];
+const whitelist: string[] = [
+  "http://localhost:5173",
+  "https://spotify-clone319.vercel.app",
+];
 
 const corsConfig = {
   origin: (
