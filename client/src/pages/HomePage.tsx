@@ -15,18 +15,18 @@ import {
 } from "../types/playlist";
 
 const HomePage = () => {
-  const { user } = useAuth();
+  // const { user } = useAuth();
   const { hoverColor } = useUIStore();
-  console.log("User :", user);
+  // console.log("User :", user);
 
   const {
     madeForYou,
     trendingAlbumsAndSingles,
     recentlyPlayed,
-    discoverPicksForYou,
+    // discoverPicksForYou,
     yourTopMixes,
     jumpBackIn,
-    episodesForYou,
+    // episodesForYou,
     bestOfArtists,
   } = useUIStore();
 
@@ -59,12 +59,10 @@ const HomePage = () => {
           </div>
 
           {/* TODO: Add Radio */}
-
           {/* Categories & Recently played */}
           <div>
             <RecentlyPlayed /> {/* Frequently Played */}
           </div>
-
           {/* Made for you playlists */}
           {madeForYou && (
             <div>
@@ -84,9 +82,7 @@ const HomePage = () => {
               />
             </div>
           )}
-
           {/* TODO: Add Discover Picks For You */}
-
           {/* Recently played playlists, artists, songs */}
           {recentlyPlayed && (
             <div>
@@ -96,7 +92,6 @@ const HomePage = () => {
               />
             </div>
           )}
-
           {/* Your top mixes */}
           {yourTopMixes && (
             <div>
@@ -106,7 +101,6 @@ const HomePage = () => {
               />
             </div>
           )}
-
           {/* Jump back in */}
           {jumpBackIn && (
             <div>
@@ -116,7 +110,6 @@ const HomePage = () => {
               />
             </div>
           )}
-
           {/* Podcast Episodes for you */}
           {/* {episodesForYou && (
             <div>
@@ -126,7 +119,6 @@ const HomePage = () => {
               />
             </div>
           )} */}
-
           {/* Best of artists */}
           {bestOfArtists && (
             <div>
