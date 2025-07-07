@@ -1,4 +1,4 @@
-import { AlbumFormData, SongFormData } from "../components/AdminModals";
+import { SongFormData } from "../components/AdminModals";
 import { axiosPublic } from "../config/axiosClient";
 import Album from "../types/album";
 import { Artist } from "../types/artist";
@@ -102,6 +102,6 @@ export const getAlbums = async (): Promise<Album[]> =>
 export const createSong = async (songFormData: SongFormData): Promise<Song> =>
   axiosPublic.post("/admin/create-song", { songFormData });
 
-export const createAlbum = async (
-  albumFormData: AlbumFormData
-): Promise<Album> => axiosPublic.post("/admin/create-album", { albumFormData });
+// export const createAlbum = async (
+//   albumFormData: AlbumFormData
+// ): Promise<Album> => axiosPublic.post("/admin/create-album", { albumFormData });
