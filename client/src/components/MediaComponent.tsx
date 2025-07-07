@@ -12,6 +12,7 @@ const MediaComponent = () => {
       type: "Playlist",
       songs: queueContext.songs,
     });
+    console.log(index);
   };
 
   return (

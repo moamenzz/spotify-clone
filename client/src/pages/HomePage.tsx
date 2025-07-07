@@ -1,11 +1,12 @@
+import { useQuery } from "@tanstack/react-query";
 import FeaturedSongCard from "../components/FeaturedSongCard";
 import PlaylistSlider from "../components/PlaylistSlider";
 import RecentlyPlayed from "../components/RecentlyPlayed";
-import useAuth from "../hooks/useAuth";
+// import useAuth from "../hooks/useAuth";
 import useUIStore from "../stores/useUIStore";
 import {
   BestOfArtistsPlaylistItems,
-  EpisodesForYouPlaylistItems,
+  // EpisodesForYouPlaylistItems,
   ForYouPlaylistItems,
   JumpBackInPlaylistitems,
   playlistData,
@@ -13,6 +14,10 @@ import {
   TrendingPlaylistItems,
   YourTopMixesPlaylistItems,
 } from "../types/playlist";
+import { getSongs } from "../lib/apiRoutes";
+import { Song } from "../types/songs";
+import Loader from "../components/Loader";
+import ErrorThrower from "../components/ErrorThrower";
 
 const HomePage = () => {
   // const { user } = useAuth();
@@ -30,7 +35,25 @@ const HomePage = () => {
     bestOfArtists,
   } = useUIStore();
 
-  return (
+  const {
+    data: songs,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["home-songs"],
+    queryFn: getSongs,
+  });
+
+  const featuredSong = songs?.find((song) => song.featured);
+
+  return isLoading ? (
+    <div className="flex justify-center items-center min-h-full">
+      <Loader />
+    </div>
+  ) : isError ? (
+    <ErrorThrower isError={isError} error={error as Error} />
+  ) : (
     // TODO: Create User Onboarding
     <div className="min-h-screen bg-[#131312]">
       <div className="mx-auto relative">
@@ -55,7 +78,7 @@ const HomePage = () => {
         <div className="flex flex-col w-full px-16 py-3 space-y-6">
           {/* Featured Song */}
           <div>
-            <FeaturedSongCard />
+            <FeaturedSongCard featuredSong={featuredSong as Song} />
           </div>
 
           {/* TODO: Add Radio */}

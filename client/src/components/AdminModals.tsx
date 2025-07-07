@@ -18,7 +18,7 @@ export interface SongFormData {
   song: string;
 }
 
-export interface AlbumFormData {}
+// export interface AlbumFormData {}
 
 const AdminModals = () => {
   const navigate = useNavigate();
@@ -30,6 +30,7 @@ const AdminModals = () => {
     genre: "",
     song: "",
   });
+  console.log(setSongFormData);
 
   const {
     mutate: createSongMutation,

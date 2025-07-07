@@ -69,8 +69,8 @@ const getStoredContext = (): QueueContext => {
         id: null,
         title: null,
         slug: null,
-        artist: null,
-        artistCover: undefined,
+        // artist: null,
+        // artistCover: undefined,
         songs: [],
       };
 };

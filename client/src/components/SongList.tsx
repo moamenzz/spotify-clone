@@ -3,7 +3,7 @@ import { useSortSongs } from "../utils/sortSongs";
 import { FaPlay, FaRegClock } from "react-icons/fa";
 import { SlOptions } from "react-icons/sl";
 import { Link } from "react-router-dom";
-import { formatDateAdded } from "../utils/formatDate";
+// import { formatDateAdded } from "../utils/formatDate";
 import { MdExplicit } from "react-icons/md";
 import { formatTime } from "../utils/formatTime";
 import useAudioPlayer, { QueueContext } from "../stores/useAudioPlayer";
@@ -36,6 +36,7 @@ const SongList: FC<SongListProps> = ({
         slug: context.slug,
         songs: context.songs,
       });
+      console.log(index);
     }
   };
 

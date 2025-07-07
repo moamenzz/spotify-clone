@@ -33,6 +33,7 @@ const InteractionButtons = ({
       type: context.type,
       songs: context.songs,
     });
+    console.log(index);
   };
 
   return (

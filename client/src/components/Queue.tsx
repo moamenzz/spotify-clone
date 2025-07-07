@@ -110,6 +110,7 @@ const QueueComponent: FC<QueueComponentProps> = ({ songs }) => {
       type: "Playlist",
       songs: queueContext.songs,
     });
+    console.log(index);
   };
 
   return (

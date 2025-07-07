@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { extractColorFromImage } from "../utils/colorUtils";
 import { Link } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
-import SongList from "../components/SongList";
-import { songs } from "../types/songs";
-import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../lib/apiRoutes";
+// import SongList from "../components/SongList";
+// import { songs } from "../types/songs";
+// import { useQuery } from "@tanstack/react-query";
+// import { getUser } from "../lib/apiRoutes";
 
 interface UserProps {
   id: number;
@@ -27,15 +27,15 @@ interface TopArtistProps {
 const ProfilePage = () => {
   const [coverColor, setCoverColor] = useState("#292929");
 
-  const {
-    data: user,
-    isLoading,
-    isError,
-    error,
-  } = useQuery({
-    queryKey: ["user"],
-    queryFn: getUser,
-  });
+  // const {
+  //   data: user,
+  //   isLoading,
+  //   isError,
+  //   error,
+  // } = useQuery({
+  //   queryKey: ["user"],
+  //   queryFn: getUser,
+  // });
 
   const mockUser: UserProps = {
     id: 1,
@@ -63,7 +63,7 @@ const ProfilePage = () => {
     },
   ];
 
-  const topTracks = songs.slice(0, 2);
+  // const topTracks = songs.slice(0, 2);
 
   useEffect(() => {
     let isMounted = true;
@@ -167,9 +167,9 @@ const ProfilePage = () => {
           <p className="text-sm text-[#B2B2B3]">Only visible to you</p>
         </h1>
         {/* Content */}
-        <div>
-          <SongList type="Playlist" songs={topTracks} showHeader={false} />
-        </div>
+        {/* <div>
+          <SongList type="Playlist" songs={topTracks} showHeader={false} context={}/>
+        </div> */}
       </div>
 
       {/* Following */}

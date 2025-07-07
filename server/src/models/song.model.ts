@@ -21,6 +21,7 @@ export interface SongDocument extends mongoose.Document {
   duration: number;
   explicit: boolean;
   plays: number; // Bestimmt, ob die Song beliebt ist oder nicht
+  featured: boolean;
 }
 
 const songSchema = new mongoose.Schema<SongDocument>(
@@ -41,6 +42,10 @@ const songSchema = new mongoose.Schema<SongDocument>(
     duration: Number,
     explicit: Boolean,
     plays: Number,
+    featured: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

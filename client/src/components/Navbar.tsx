@@ -131,12 +131,12 @@ const Navbar: FC = () => {
               <Link to="/settings">Settings</Link>
             </li>
             <li className="border-t my-2 border-gray-700">
-              <Link
+              <button
                 onClick={() => logoutMutation()}
                 className="font-semibold text-red-500"
               >
                 Logout
-              </Link>
+              </button>
             </li>
           </ul>
         </div>

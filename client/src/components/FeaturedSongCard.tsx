@@ -1,13 +1,12 @@
 import { FC } from "react";
 import { SlOptions } from "react-icons/sl";
+import { Song } from "../types/songs";
 
 interface FeaturedSongProps {
-  featuredSong: { id: string; title: string; artists: string[]; cover: string };
+  featuredSong: Song;
 }
 
-const FeaturedSongCard: FC<FeaturedSongProps> = ({
-  featuredSong = { title: "Eros", artists: ["zandros"], cover: "/eros.jpg" },
-}) => {
+const FeaturedSongCard: FC<FeaturedSongProps> = ({ featuredSong }) => {
   return (
     <div className="bg-gradient-to-r from-black to-[#131312] w-full h-[20rem] relative">
       {/* Fade */}
@@ -19,7 +18,7 @@ const FeaturedSongCard: FC<FeaturedSongProps> = ({
         {/* Picture */}
         <div>
           <img
-            src={featuredSong.cover}
+            src={featuredSong.logo}
             alt="featured-song"
             className="w-64 h-64 object-cover"
           />
@@ -36,7 +35,7 @@ const FeaturedSongCard: FC<FeaturedSongProps> = ({
           </h1>
           {/* Artist name */}
           <h2 className="font-semibold underline text-xl cursor-pointer">
-            {featuredSong.artists}
+            {featuredSong.artists.map((artist) => artist.artist).join(", ")}
           </h2>
           <p className="font-semibold text-md">Listen Now</p>
           {/* Action buttons */}

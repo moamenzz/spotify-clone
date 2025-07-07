@@ -66,6 +66,7 @@ export const Sidebar: FC<SidebarProps> = () => {
       if (context?.previousLibrary) {
         queryClient.setQueryData(["library"], context.previousLibrary);
       }
+      console.log(err, variables);
     },
     onSettled: () => {
       // Egal ob Erfolg oder Fehler, aktualisiere die Daten im Hintergrund

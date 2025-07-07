@@ -4,18 +4,19 @@ import { GoVerified } from "react-icons/go";
 import { extractColorFromImage } from "../utils/colorUtils";
 import { songs } from "../types/songs";
 import { Link, useParams } from "react-router-dom";
-import { formatDateAdded } from "../utils/formatDate";
+// import { formatDateAdded } from "../utils/formatDate";
 import InteractionButtons from "../components/InteractionButtons";
 import SongList from "../components/SongList";
 import {
   Artist,
   ArtistPick,
   FansAlsoLike,
+  FansAlsoLikeProps,
   FeaturedOnPlaylists,
 } from "../types/artist";
 import { useQuery } from "@tanstack/react-query";
 import { getArtist } from "../lib/apiRoutes";
-import { PlaylistProps } from "../types/playlist";
+// import { PlaylistProps } from "../types/playlist";
 import Loader from "../components/Loader";
 import ErrorThrower from "../components/ErrorThrower";
 import { QueueContext } from "../stores/useAudioPlayer";
@@ -53,6 +54,8 @@ const ArtistPage = () => {
     monthlyListeners: 603010,
     likedSongs: 2,
     about: "singer, songwriter, vibe curator 🌹",
+    bio: "singer, songwriter, vibe curator 🌹",
+    songs: [],
     artistPick: {
       id: 1,
       title: "Dangerous",
@@ -337,9 +340,9 @@ const ArtistPage = () => {
               <div>
                 <p className="text-md font-semibold text-white">{song.title}</p>
                 {/* Type */}
-                <p className="text-sm font-semibold text-[#B2B2B3]">
+                {/* <p className="text-sm font-semibold text-[#B2B2B3]">
                   {formatDateAdded(song.createdAt)} · {song.type}
-                </p>
+                </p> */}
               </div>
               {/* Button */}
               <div className="absolute right-4 bottom-22 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
