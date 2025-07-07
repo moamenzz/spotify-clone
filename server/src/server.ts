@@ -1,5 +1,6 @@
+import "./instrument";
+import * as Sentry from "@sentry/node";
 import express from "express";
-import "dotenv/config";
 import connectDB from "./config/connectDB";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -21,6 +22,8 @@ import albumRouter from "./routes/album.route";
 const port: String | Number = PORT || 3000;
 
 const app = express();
+
+app.set("trust proxy", 1);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -50,6 +53,16 @@ app.use("/song", authenticate, songRouter);
 app.use("/album", authenticate, albumRouter);
 app.use("/admin", authenticate, adminRouter);
 app.use("/playlist", authenticate, playlistRouter);
+
+app.get("/", function rootHandler(req, res) {
+  res.end("Hello world!");
+});
+
+app.get("/debug-sentry", function mainHandler(req, res) {
+  throw new Error("My first Sentry error!");
+});
+
+Sentry.setupExpressErrorHandler(app);
 
 app.use(errorHandler);
 

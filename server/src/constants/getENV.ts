@@ -9,6 +9,7 @@ const getENV = (key: string, defaultValue?: string): string => {
 export const PORT = getENV("PORT", "3000");
 export const MONGODB_URI = getENV("MONGODB_URI");
 export const CLIENT_URL = getENV("CLIENT_URL", "http://localhost:5173");
+export const SENTRY_DSN = getENV("SENTRY_DSN");
 export const SESSION_SECRET = getENV("SESSION_SECRET", "http://localhost:5173");
 export const ACCESS_TOKEN_SECRET = getENV("ACCESS_TOKEN_SECRET");
 export const REFRESH_TOKEN_SECRET = getENV("REFRESH_TOKEN_SECRET");
