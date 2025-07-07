@@ -57,7 +57,7 @@ const LoginPage = () => {
         {/* Social Login Buttons */}
         <div className="space-y-4 mb-6">
           <a
-            href="http://localhost:3000/auth/google"
+            href={import.meta.env.VITE_GOOGLE_AUTH}
             className="w-full py-3 px-4 flex items-center justify-center rounded-full border border-gray-700 hover:border-white transition-colors cursor-pointer"
           >
             <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ const LoginPage = () => {
             Continue with Facebook
           </a>
           <a
-            href="http://localhost:3000/auth/github"
+            href={import.meta.env.VITE_GITHUB_AUTH}
             className="w-full py-3 px-4 flex items-center justify-center rounded-full border border-gray-700 hover:border-white transition-colors cursor-pointer"
           >
             <svg
