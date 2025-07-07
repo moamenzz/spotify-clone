@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "customtheme";
+  default: true;
+  prefersdark: false;
+  color-scheme: dark;
+
+  --color-primary: #ff5733;
+  --color-primary-content: #ffffff;
+  --color-secondary: #33c1ff;
+  --color-secondary-content: #000000;
+}
