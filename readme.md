@@ -76,7 +76,7 @@ This project challenged and taught me:
 
 | Frontend | Backend | Database | Other |
 |----------|---------|----------|-------|
-| React    | Node.js (Express.js) | MongoDB (Mongoose)  | JWT, Axios, Vite, Socket.io, Cloudinary, Stripe, etc.|
+| React    | Node.js (Express.js) | MongoDB (Mongoose)  | JWT, Axios, Vite, Zustand, Sentry Cloudinary, etc.|
 
 ---
 
